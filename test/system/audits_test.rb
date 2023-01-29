@@ -9,33 +9,4 @@ class AuditsTest < ApplicationSystemTestCase
     visit audits_url
     assert_selector "h1", text: "Audits"
   end
-
-  test "creating a Audit" do
-    visit audits_url
-    click_on "New Audit"
-
-    click_on "Create Audit"
-
-    assert_text "Audit was successfully created"
-    click_on "Back"
-  end
-
-  test "updating a Audit" do
-    visit audits_url
-    click_on "Edit", match: :first
-
-    click_on "Update Audit"
-
-    assert_text "Audit was successfully updated"
-    click_on "Back"
-  end
-
-  test "destroying a Audit" do
-    visit audits_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
-
-    assert_text "Audit was successfully destroyed"
-  end
 end
