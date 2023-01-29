@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_question, only: %i[show edit update destroy]
   before_action :set_election, only: %i[index new create]
+  before_action :set_current_user, only: %i[create update destroy]
 
   # GET /questions
   # GET /questions.json

@@ -3,6 +3,7 @@
 class ElectionsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_election, only: %i[show edit update destroy]
+  before_action :set_current_user, only: %i[create update destroy]
 
   # GET /elections
   # GET /elections.json

@@ -4,6 +4,7 @@ class VotersController < ApplicationController
   before_action :authenticate_user!, except: %i[ballot submit]
   before_action :set_voter, only: %i[show edit update destroy]
   before_action :set_election, only: %i[index new create]
+  before_action :set_current_user, only: %i[create update destroy]
 
   # GET /voters
   # GET /voters.json

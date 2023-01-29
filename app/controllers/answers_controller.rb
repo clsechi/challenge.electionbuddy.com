@@ -4,6 +4,7 @@ class AnswersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_answer, only: %i[show edit update destroy]
   before_action :set_question, only: %i[index new create]
+  before_action :set_current_user, only: %i[create update destroy]
 
   # GET /answers
   # GET /answers.json
