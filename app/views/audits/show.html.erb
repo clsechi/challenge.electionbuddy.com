@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Entity:</strong>
+  <%= @audit.auditable_type %>
+</p>
+
+<p>
+  <strong>Updated At:</strong>
+  <%= @audit.created_at %>
+</p>
+
+<p>
+  <strong>Updated By:</strong>
+  <%= @audit.user.email %>
+</p>
+
+<p>
+  <strong>Changes</strong>
+  <table>
+    <thead>
+      <tr>
+        <th>Column</th>
+        <th>From</th>
+        <th>To</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @audit.audited_changes.each_pair do |column, changes| %>
+        <tr>
+          <td><%= column %></td>
+          <td><%= changes.first %></td>
+          <td><%= changes.last %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+
+<%= link_to 'Back', audits_path %>
